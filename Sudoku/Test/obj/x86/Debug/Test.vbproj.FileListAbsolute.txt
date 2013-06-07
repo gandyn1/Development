@@ -26,3 +26,6 @@ C:\My Teradata\Development\Repository\MyGitHub\Sudoku\Test\obj\x86\Debug\Generat
 C:\My Teradata\Development\Repository\MyGitHub\Sudoku\Test\obj\x86\Debug\Test.exe
 C:\My Teradata\Development\Repository\MyGitHub\Sudoku\Test\obj\x86\Debug\Test.xml
 C:\My Teradata\Development\Repository\MyGitHub\Sudoku\Test\obj\x86\Debug\Test.pdb
+C:\My Teradata\Development\Repository\MyGitHub\trunk\Sudoku\Test\obj\x86\Debug\Test.exe
+C:\My Teradata\Development\Repository\MyGitHub\trunk\Sudoku\Test\obj\x86\Debug\Test.xml
+C:\My Teradata\Development\Repository\MyGitHub\trunk\Sudoku\Test\obj\x86\Debug\Test.pdb
