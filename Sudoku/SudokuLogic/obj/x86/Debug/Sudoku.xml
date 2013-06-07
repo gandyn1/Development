@@ -1,0 +1,36 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Sudoku
+</name>
+</assembly>
+<members>
+<member name="P:Sudoku.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Sudoku.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Sudoku.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:Sudoku.Logic.SudokuSolver.Solve(Sudoku.Logic.SudokuSolver.SolutionFoundDelegate)">
+	<summary>
+		<para>Summary: Finds the first solution to the board.</para>
+		<para>Returns: Boolean value indicating if a solution was found.</para>
+		<para>Remarks: The SolutionFound delegate is invoked when a solution has been found.</para>
+	</summary>
+</member><member name="M:Sudoku.Logic.SudokuSolver.SolveForAllSolutions(Sudoku.Logic.SudokuSolver.SolutionFoundDelegate)">
+	<summary>
+		<para>Summary: Finds the all solutions to the board.</para>
+		<para>Returns: Boolean value indicating if a solution was found.</para>
+		<para>Remarks: The SolutionFound delegate is invoked when a solution has been found.</para>
+	</summary>
+</member>
+</members>
+</doc>
