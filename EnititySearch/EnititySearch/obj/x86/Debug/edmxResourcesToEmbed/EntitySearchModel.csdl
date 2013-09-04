@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EnititySearchDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="EnititySearchDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Contacts" EntityType="EnititySearchDBModel.Contact" />
+    <EntitySet Name="Aliases" EntityType="EnititySearchDBModel.Alias" />
+    <EntitySet Name="Keywords" EntityType="EnititySearchDBModel.Keyword" />
+    <AssociationSet Name="KeywordAlias" Association="EnititySearchDBModel.KeywordAlias">
+      <End Role="Keyword" EntitySet="Keywords" />
+      <End Role="Alias" EntitySet="Aliases" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Weight" Type="Double" />
+    <Property Name="Birthday" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="Alias">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="KeywordID" Nullable="false" />
+    <NavigationProperty Name="Keyword" Relationship="EnititySearchDBModel.KeywordAlias" FromRole="Alias" ToRole="Keyword" />
+  </EntityType>
+  <EntityType Name="Keyword">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Aliases" Relationship="EnititySearchDBModel.KeywordAlias" FromRole="Keyword" ToRole="Alias" />
+  </EntityType>
+  <Association Name="KeywordAlias">
+    <End Type="EnititySearchDBModel.Keyword" Role="Keyword" Multiplicity="1" />
+    <End Type="EnititySearchDBModel.Alias" Role="Alias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Keyword">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Alias">
+        <PropertyRef Name="KeywordID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
