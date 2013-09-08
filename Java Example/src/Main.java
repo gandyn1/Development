@@ -66,10 +66,11 @@ public class Main {
 			
 			User.Msg("Hey " + User.Name() + ", how many Prime Numbers do you want to find?");
 			int count = User.getInt();
-			PrimeNumbers.add(2);
+			
 			int currentNumber = 3;
 			
 			if (count > 0)
+				PrimeNumbers.add(2);
 				while(PrimeNumbers.size() != count){
 					if(Math.isPrime(currentNumber)){
 						PrimeNumbers.add(currentNumber);

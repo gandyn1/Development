@@ -32,7 +32,8 @@ public class User {
 		   answer.compareTo("T") == 0 ||
 		   answer.contains("TRUE") ||
 		   answer.contains("SURE") ||
-		   answer.contains("YEA");
+		   answer.contains("YEA") ||
+		   answer.contains("YUP");
 	}
 	
 	public static boolean askQuit(){
