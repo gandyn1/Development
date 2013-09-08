@@ -13,7 +13,7 @@ public class StopWatch {
 	}
 	
 	public void Stop(){
-		_TotalMilliseconds += ((new Date()).getTime() - _Start.getTime()) / 1000;
+		_TotalMilliseconds += timeElapsed();
 		_Start = null;
 	}
 	
@@ -23,15 +23,15 @@ public class StopWatch {
 	}
 	
 	public String Time(){
-		int milliseconds = _TotalMilliseconds;		
-		
-		if(_Start != null)
-			milliseconds += (int) ((new Date()).getTime() - _Start.getTime());
-		
+		int milliseconds = _TotalMilliseconds + timeElapsed();			
 		int seconds = (int) (milliseconds / 1000) % 60 ;
 		int minutes = (int) ((milliseconds / (1000*60)) % 60);
 		int hours   = (int) ((milliseconds / (1000*60*60)) % 24);
 		
 		return String.format("%d:%d:%d.%d",hours,minutes,seconds,milliseconds);
+	}
+	
+	private int timeElapsed(){
+		return (_Start == null) ? 0 : (int) ((new Date()).getTime() - _Start.getTime());
 	}
 }
