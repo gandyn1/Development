@@ -14,16 +14,38 @@ public class Main {
 		
 		User.Msg("Welcome to my example java project!!!");
 		
-		_sw.Start();
-		
 		CalculateAge();		
 		
-		_sw.Reset();
+		TellMagicTrick();
 		
 		CalculatePrimeNumber();
 		
 		User.Msg("Thanks " + User.Name() + " for using our program. Goodbye!");
 		
+	}
+	
+	public static void TellMagicTrick(){
+		if(User.askYesNo("So do you want to hear a magic trick?")){		
+			try {
+				User.waitMsg("Ok " + User.Name() + ", pick a 3-digit number where the first and last digits differ by 2 or more...");
+				User.Msg("Consider the \"reverse\" number, obtained by reading it backwards.");
+				Thread.sleep(5000);
+				User.Msg("Subtract the smaller of these two numbers from the larger one.");
+				Thread.sleep(5000);
+				User.Msg("Add the result to its own reverse.");
+				Thread.sleep(5000);
+				User.waitMsg("Call me crazy but I think I know what it is.");
+				
+				if(User.askYesNo("Did you get 1089?"))
+					User.Msg("Read your mind son.  Aint that sumpin?");
+				else 
+					User.Msg(User.Name() + " wow, that just means you suck math. lol its all good!");
+				
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	private static void TimeStamp(){
@@ -35,6 +57,7 @@ public class Main {
 	}
 	
 	private static void CalculatePrimeNumber() {
+		_sw.Reset();
 		boolean quit = false;
 		String action = "finding prime numbers";
 		
@@ -45,13 +68,14 @@ public class Main {
 			int count = User.getInt();
 			PrimeNumbers.add(2);
 			int currentNumber = 3;
-					
-			while(PrimeNumbers.size() != count){
-				if(Math.isPrime(currentNumber)){
-					PrimeNumbers.add(currentNumber);
+			
+			if (count > 0)
+				while(PrimeNumbers.size() != count){
+					if(Math.isPrime(currentNumber)){
+						PrimeNumbers.add(currentNumber);
+					}
+					currentNumber+=2;
 				}
-				currentNumber+=2;
-			}
 					
 			User.Msg(PrimeNumbers.toString());
 			
@@ -62,6 +86,7 @@ public class Main {
 	}
 
 	private static void CalculateAge() {
+		_sw.Reset();
 		boolean quit = false;
 		String action = "calculating your friends age";
 		while(!quit){

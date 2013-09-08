@@ -11,8 +11,7 @@ public class User {
 			if(askYesNo("Hey man can I ask a quick question?")){
 				Msg("What the fuck is your name?  I just cant remember...");
 				_Name = getString();
-				Msg(_Name + ", thats it! Im sorry man, im fucking terrible with names.");
-				waitForResponse();
+				waitMsg(_Name + ", thats it! Im sorry man, im fucking terrible with names.");
 			}else{
 				Msg("Fuck you then bro!");
 				_Name = "Asshole";
@@ -51,7 +50,8 @@ public class User {
 		return response;
 	}
 	
-	public static void waitForResponse(){
+	public static void waitMsg(String value){
+		Msg(value);
 		getString();
 	}
 	
