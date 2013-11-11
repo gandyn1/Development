@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidUIExamples", "AndroidUIExamples\AndroidUIExamples.csproj", "{DD14A5F1-E502-49D3-B8E9-86D96A8CD853}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD14A5F1-E502-49D3-B8E9-86D96A8CD853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD14A5F1-E502-49D3-B8E9-86D96A8CD853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD14A5F1-E502-49D3-B8E9-86D96A8CD853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD14A5F1-E502-49D3-B8E9-86D96A8CD853}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = AndroidUIExamples\AndroidUIExamples.csproj
+	EndGlobalSection
+EndGlobal
