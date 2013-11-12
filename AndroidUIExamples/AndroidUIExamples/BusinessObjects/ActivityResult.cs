@@ -15,18 +15,22 @@ namespace AndroidUIExamples
 {
 	public static class ActivityResult
 	{
-		private static Dictionary<Guid,Object> _objects = new Dictionary<Guid,Object> ();
+		private static Dictionary<int,Object> _objects = new Dictionary<int,Object> ();
 
-		public static Guid GetKey(){
-			return Guid.NewGuid ();
-		}
-
-		public static void SetResult(Guid key,Object obj){
+		public static void SetResult(int key,Object obj){
 			_objects.Add (key, obj);
 		}
 
-		public static Object GetResult(Guid key){
-			return _objects.ContainsKey (key) ? _objects [key] : null;
+		public static Object GetResult<TData>(int key){
+
+			Object obj = null;
+
+			if (_objects.ContainsKey (key)) {
+				obj = _objects [key];
+				_objects.Remove (key);
+			}
+
+			return (TData) obj;
 		}
 	}
 }

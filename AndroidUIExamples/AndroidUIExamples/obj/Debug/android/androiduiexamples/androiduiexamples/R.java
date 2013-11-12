@@ -14,10 +14,19 @@ public final class R {
         public static final int icon=0x7f020000;
     }
     public static final class id {
-        public static final int myButton=0x7f050000;
+        public static final int AddPerson_DOB=0x7f050002;
+        public static final int AddPerson_Name=0x7f050001;
+        public static final int AddPerson_Weight=0x7f050003;
+        public static final int AddPerson_btnCancel=0x7f050005;
+        public static final int AddPerson_btnSave=0x7f050006;
+        public static final int Main_btnAddPerson=0x7f050008;
+        public static final int linearLayout1=0x7f050000;
+        public static final int linearLayout2=0x7f050004;
+        public static final int myButton=0x7f050007;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
+        public static final int addperson=0x7f030000;
+        public static final int main=0x7f030001;
     }
     public static final class string {
         public static final int app_name=0x7f040001;
